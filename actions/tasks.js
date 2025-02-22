@@ -10,7 +10,7 @@ async function addTask(name, description) {
   });
 
   let saved = await newTask.save();
-  console.log(saved);
+  // console.log(saved);
 }
 
 export { addTask };

@@ -17,6 +17,7 @@ export default function Home() {
         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2">This page running addTask function .</li>
           <li>without the warnings</li>
+          <li>{process.env.MONGODB_URI}</li>
         </ol>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
