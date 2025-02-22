@@ -15,8 +15,8 @@ export default function Home() {
           priority
         />
         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">This page running addTask function.</li>
-          <li>Sup</li>
+          <li className="mb-2">This page running addTask function .</li>
+          <li>without the warnings</li>
         </ol>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
