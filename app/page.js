@@ -1,10 +1,15 @@
-import { addTask, addTaskv2 } from "@/actions/tasks";
+"use client";
+// import { addTask, addTaskv2 } from "@/actions/tasks";
 import Image from "next/image";
 
-export default async function Home() {
-  await addTask("Mongoose", "V4 bro pls work");
-  await addTaskv2("W/o mongoose", "V4 bro pls work");
-  await addTaskv2("W/o mongoose v4", "V4 bro pls work");
+export default function Home() {
+  // await addTask("Mongoose", "V4 bro pls work");
+  // await addTaskv2("W/o mongoose", "V4 bro pls work");
+  // await addTaskv2("W/o mongoose v4", "V4 bro pls work");
+
+  function handleClick() {
+    fetch("/api/add");
+  }
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -26,7 +31,7 @@ export default async function Home() {
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
             className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="/api/add"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -37,7 +42,7 @@ export default async function Home() {
               width={20}
               height={20}
             />
-            Deploy now
+            Add Task
           </a>
           <a
             className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
@@ -47,6 +52,7 @@ export default async function Home() {
           >
             Read our docs
           </a>
+          <button onClick={handleClick}>Add Task</button>
         </div>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
