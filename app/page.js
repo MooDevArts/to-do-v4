@@ -1,9 +1,10 @@
-import { addTask } from "@/actions/tasks";
+import { addTask, addTaskv2 } from "@/actions/tasks";
 import Image from "next/image";
 
 export default async function Home() {
-  await addTask("Task", "V4 bro pls work");
-  console.log("helloooooooooooo");
+  await addTask("Mongoose", "V4 bro pls work");
+  await addTaskv2("W/o mongoose", "V4 bro pls work");
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">

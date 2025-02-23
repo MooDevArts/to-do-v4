@@ -1,9 +1,16 @@
 import mongoose from "mongoose";
+let cachedDb = null;
 
 async function connectToDb() {
-  await mongoose.connect(process.env.MONGODB_URI, {
-    dbName: "tasks_next", // ✅ Force MongoDB to use "tasks_next"
+  if (cachedDb) {
+    return cachedDb;
+  }
+
+  let connection = await mongoose.connect(process.env.MONGODB_URI, {
+    dbName: "tasks_next",
   });
+  cachedDb = connection;
+  return cachedDb;
 }
 
 export { connectToDb };
