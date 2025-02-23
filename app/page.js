@@ -1,8 +1,8 @@
 import { addTask } from "@/actions/tasks";
 import Image from "next/image";
 
-export default function Home() {
-  addTask("Task", "V4 bro pls work");
+export default async function Home() {
+  await addTask("Task", "V4 bro pls work");
   console.log("helloooooooooooo");
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -16,8 +16,8 @@ export default function Home() {
           priority
         />
         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">This page running addTask function .</li>
-          <li>Log hi to see logs on vercel</li>
+          <li className="mb-2">v6</li>
+          <li>Added await to function</li>
           <li>{process.env.MONGODB_URI}</li>
         </ol>
 
